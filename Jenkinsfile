@@ -1,13 +1,10 @@
 pipeline {
-    agent {
-        label 'docker' 
-    }
+    agent none
     stages {
         stage('Build') {
             agent {
                 docker {
                   // Set both label and image
-                  label 'docker'
                   image 'python'
                }
             }
