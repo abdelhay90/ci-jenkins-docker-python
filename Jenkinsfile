@@ -1,11 +1,9 @@
 pipeline {
-    // agent { docker { image 'python' } }
-    agent any
+    agent { docker { image 'python' } }
     stages {
         stage('Build') {
             steps {
                 // Download the code
-                sh 'docker pull python'
                 checkout scm
             }
         }
