@@ -1,13 +1,7 @@
 pipeline {
-    agent none
+    agent { docker { image 'python' } }
     stages {
         stage('Build') {
-            agent {
-                docker {
-                  // Set both label and image
-                  image 'python'
-               }
-            }
             steps {
                 // Download the code
                 checkout scm
